@@ -8,4 +8,4 @@ RUN wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
 RUN tar xf go1.20.2.linux-amd64.tar.gz
 
 COPY . /
-RUN cd pkg && CC='/zig/zig cc' /go/bin/go test -race .
+RUN cd pkg && CC='/zig/zig cc' /go/bin/go test -ldflags=-v -work -x -race .
